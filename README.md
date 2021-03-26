@@ -4,10 +4,12 @@ Based on study and paper "Effects of Exenatide Plus Rosiglitazone on B-Cell Func
 Subjects With Type 2 Diabetes on Metformin"
 
 Objective: 
-  -To evaluate the correlation between commmonly used insulin sensitivity indices with the M-value from euglycemic clamp test
-  -Understand the magnitude of change and the variability in insulin sensitivity indices for patients with Type-2 Diabetes treated with thiazolidinediones(TZD)
-   Treatments included exenatide (EXE), rosiglitazone (ROSI) and a combination of the two (EXENROSI)
-  -Evaluate the time trend of insulin sensitivity change over the course of treatment with TZDs
+  To evaluate the correlation between commmonly used insulin sensitivity indices with the M-value from euglycemic clamp test.
+  
+  Understand the magnitude of change and the variability in insulin sensitivity indices for patients with Type-2 Diabetes treated with thiazolidinediones(TZD).
+  Treatments included exenatide (EXE), rosiglitazone (ROSI) and a combination of the two (EXENROSI).
+  
+  Evaluate the time trend of insulin sensitivity change over the course of treatment with TZDs
   
 M-value, used to quantify whole-body insulin sensitivity and considered the gold standard, is the measurement of insulin stimulated glucose disposal during the euglycemic clamp. 
 
