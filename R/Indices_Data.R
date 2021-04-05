@@ -17,12 +17,14 @@ library(tidyr)
 library(psych)
 library(gridExtra)
 
+
+
 #####################
 
-new_params <- read.csv("gway_IS_parameters.csv")
-clamp <- read.csv("clamp.csv")
-efficacy <- read.csv("efficacy.csv")
-testmeal <- read.csv("testmeal.csv")
+new_params <- read.csv("IS_parameters.csv")
+clamp <- read.csv("clamp_new.csv")
+efficacy <- read.csv("efficacy_new.csv")
+testmeal <- read.csv("testmeal_new.csv")
 
 
 # Filter out non complete data from csv (SI, Quicki, OGIS, logPREDIM)
@@ -32,9 +34,6 @@ dup <- data.frame(sort_dup[duplicated(new_params$PATIENT),])
 diff <- setdiff(non_dup, dup)
 final_new_params <- setdiff(new_params,diff)
 final_new_params$THERAPY <- as.character(final_new_params$THERAPY)
-final_new_params$THERAPY[final_new_params$THERAPY=="ROS"]<- "Rosiglitazone"
-final_new_params$THERAPY[final_new_params$THERAPY=="EXENROSI"]<- "Exenatide+Rosiglt" 
-final_new_params$THERAPY[final_new_params$THERAPY=="EXENATI1"]<- "Exenatide" 
 long_newparams <- final_new_params
 
 
@@ -144,7 +143,7 @@ full_set <- merge(full_set, predim, all=TRUE)
 full_set <- merge(full_set, quicki, all=TRUE)
 full_set <- subset(full_set, select=-c(Visit))
 all_trt <- full_set
-full_set <- full_set %>% filter (Treatment=="Rosiglitazone")
+full_set <- full_set %>% filter (Treatment=="TRT_A")
 full_set_complete <- full_set[complete.cases(full_set),]
 
 
@@ -153,20 +152,20 @@ baseline_compins <- full_set[,c(1,3:4)]
 baseline_compins <- reshape(baseline_compins, idvar="Subject ID", timevar="Parameter", direction="wide")
 baseline_compins$`Subject ID` <- NULL
 baseline_compins$Composite_Insulin <- 10000/(sqrt(baseline_compins[,1]*baseline_compins[,9]*baseline_compins[,2]/165*baseline_compins[,10]/165))
-baseline_compins_ros <- baseline_compins[complete.cases(baseline_compins[,11]),]
+baseline_compins_trt_a <- baseline_compins[complete.cases(baseline_compins[,11]),]
 
 endpoint_compins <- full_set[,c(1,3,5)]
 endpoint_compins <- reshape(endpoint_compins, idvar="Subject ID", timevar="Parameter", direction="wide")
 endpoint_compins$`Subject ID` <- NULL
 endpoint_compins$Composite_Insulin <- 10000/(sqrt(endpoint_compins[,1]*endpoint_compins[,9]*endpoint_compins[,2]/165*endpoint_compins[,10]/165))
-endpoint_compins_ros <- endpoint_compins[complete.cases(endpoint_compins[,11]),]
+endpoint_compins_trt_a <- endpoint_compins[complete.cases(endpoint_compins[,11]),]
 
 change_compins <- full_set[,c(1,3,6)]
 change_compins <- reshape(change_compins, idvar="Subject ID", timevar="Parameter", direction="wide")
 change_compins$`Subject ID` <- NULL
 change_compins <- change_compins[complete.cases(change_compins[,c(1,2,9,10)]),]
-change_compins$Composite_Insulin <- endpoint_compins_ros$Composite_Insulin-baseline_compins_ros$Composite_Insulin
-change_compins_ros <- change_compins
+change_compins$Composite_Insulin <- endpoint_compins_trt_a$Composite_Insulin-baseline_compins_trt_a$Composite_Insulin
+change_compins_trt_a <- change_compins
 
 # All Treatment Composite Insulin
 baseline_compins <- all_trt[,c(1,3:4)]

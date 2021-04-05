@@ -1,6 +1,6 @@
 # Insulin Sensitivity
 #
-# For Rosiglitazone Treatment only
+# For TRT_A Treatment only
 #
 # Calculates and outputs correlation and corresponding p-value between M-value and various indices.
 # Creates and outputs plots to show each relationship over time and their variability. 
@@ -68,8 +68,8 @@ pvalue_final <- merge(pvalue_final,change_pvalue,all=TRUE)
 row.names(pvalue_final) <- c("Endpoint","Change","Baseline")
 pvalue_final <- pvalue_final[c(3,1,2),]
 
-write.csv(pvalue_final, "InsulinSensitivity_ROS_pvalues.csv")
-write.csv(correlation_final, "InsulinSensitivity_ROS_correlation.csv")
+write.csv(pvalue_final, "InsulinSensitivity_trt_a_pvalues.csv")
+write.csv(correlation_final, "InsulinSensitivity_trt_a_correlation.csv")
 
 
 
@@ -119,7 +119,7 @@ for(i in 2:length(baseline_corr1)){
     ggtitle(paste("Baseline Comparison for M-value v",colnames(baseline_corr1)[i])) + ylab(colnames(baseline_corr1)[i])
   b[[i]] <- b1
 }
-pdf("Baseline_plots_Ros.pdf")
+pdf("Baseline_plots_trt_a.pdf")
 for(i in 2:length(baseline_corr1)){
   print(b[[i]])
 }
@@ -136,7 +136,7 @@ for(i in 2:length(endpoint_corr1)){
     ggtitle(paste("Baseline Comparison for M-value v",colnames(endpoint_corr1)[i])) + ylab(colnames(endpoint_corr1)[i])
   e[[i]] <- e1
 }
-pdf("Endpoint_plots_Ros.pdf")
+pdf("Endpoint_plots_trt_a.pdf")
 for(i in 2:length(endpoint_corr1)){
   print(e[[i]])
 }
@@ -153,7 +153,7 @@ for(i in 2:length(change_corr1)){
     ggtitle(paste("Baseline Comparison for M-value v",colnames(change_corr1)[i])) + ylab(colnames(change_corr1)[i])
   c[[i]] <- c1
 }
-pdf("Change_plots_Ros.pdf")
+pdf("Change_plots_trt_a.pdf")
 for(i in 2:length(change_corr1)){
   print(c[[i]])
 }

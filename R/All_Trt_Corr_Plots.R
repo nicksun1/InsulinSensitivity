@@ -1,6 +1,6 @@
 # Insulin Sensitivity
 #
-# For All Treatments (Rosiglitazone, Exenatide + Rosiglitazone, Exenatide)
+# For All Treatments
 #
 # Calculates and outputs correlation and corresponding p-value between M-value and various indices.
 # Creates and outputs plots to show each relationship over time and their variability. 
@@ -67,8 +67,8 @@ pvalue_final <- merge(pvalue_final,change_pvalue,all=TRUE)
 row.names(pvalue_final) <- c("Endpoint","Change","Baseline")
 pvalue_final_all <- pvalue_final[c(3,1,2),]
 
-write.csv(pvalue_final_all, "GWAY_ALL_pvalues.csv")
-write.csv(correlation_final_all, "GWAY_ALL_correlation.csv")
+write.csv(pvalue_final_all, "ALL_pvalues.csv")
+write.csv(correlation_final_all, "ALL_correlation.csv")
 
 
 

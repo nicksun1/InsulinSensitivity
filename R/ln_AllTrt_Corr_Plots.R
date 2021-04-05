@@ -1,6 +1,6 @@
 # Insulin Sensitivity
 #
-# For All Treatments (Rosiglitazone, Exenatide + Rosiglitazone, Exenatide) using ln() data
+# For All Treatments using ln() data
 #
 # Calculates and outputs correlation and corresponding p-value between M-value and various indices.
 # Creates and outputs plots to show each relationship over time and their variability. 
