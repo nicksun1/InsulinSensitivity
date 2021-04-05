@@ -5,9 +5,9 @@ Version: 0.1.0
 Authors@R: 
     person("Nicholas", "Sun", email = "nicksun12345@gmail.com", role = c("aut", "cre"))
 Description: Evaluates correlation between commmonly used insulin sensitivity indices with the M-value from euglycemic clamp test
-    Displays magnitude of change and the variability in insulin sensitivity indices for patients with Type-2 Diabetes treated with thiazolidinediones(TZD)
-    Treatments included exenatide (EXE), rosiglitazone (ROSI) and a combination of the two (EXENROSI)
-    Evaluates the time trend of insulin sensitivity change over the course of treatment with TZDs
+    Displays magnitude of change and the variability in insulin sensitivity indices for patients with Type-2 Diabetes
+    Two different treatments were included in the study as well as one which combined the two.
+    Evaluates the time trend of insulin sensitivity change over the course of treatment,
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
