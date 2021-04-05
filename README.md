@@ -5,7 +5,7 @@ Objective:
   -Understand the magnitude of change and the variability in insulin sensitivity indices for patients with Type-2 Diabetes
   -Evaluate the time trend of insulin sensitivity change over the course of treatment
 
-Refer to Insulin Sensitivity Reference.pdf for summary of measures and abbreviations.
+Refer to Insulin Sensitivity Reference.png for summary of measures and abbreviations.
 - OGTT -> oral glucose tolerance test; MMTT -> mixed meal tolerance test.
 - M-value, used to quantify whole-body insulin sensitivity and considered the gold standard, is the measurement of insulin stimulated glucose disposal during the euglycemic clamp. 
 
